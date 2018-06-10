@@ -23,6 +23,7 @@ public class TestIterator {
 			System.out.println("Ename   "+e.getEmpname());
 			System.out.println("Salary  "+e.getSalary());
 			System.out.println("Experience  "+e.getExperiance());
+			System.out.println("hiiiiiiiii");
 			if(e.getExperiance()>=10) {
 			ir.remove();
 			System.out.println(e.getEmpname()+"  Is Remover From The Company................Because Management Problem");
