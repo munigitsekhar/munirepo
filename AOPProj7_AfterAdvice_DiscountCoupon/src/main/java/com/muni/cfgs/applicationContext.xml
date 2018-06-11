@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--Configuring The Target Class  -->
+<bean id="amtCalService" class="com.muni.service.BillAmtGeneratorServiceImpl"/>
+
+<!--Configuring the Advices  -->
+<bean id="discountAdvice" class="com.muni.advice.DiscouponGenetarorAdvice"/>
+
+<!--Configuring the ProxyFactory Bean -->
+<bean id="pfb" class="org.springframework.aop.framework.ProxyFactoryBean">
+<property name="target" ref="amtCalService"/>
+<property name="interceptorNames">
+<value>discountAdvice</value>
+</property>
+<property name="interfaces">
+<value>com.muni.service.BillAmtGenartorService</value>
+</property>
+</bean>
+
+</beans>
