@@ -23,6 +23,8 @@ public class DiscouponGenetarorAdvice  implements AfterReturningAdvice{
 			  status= "Discount of 20% in next Purchase";
 		 else if(billAmt>4000)
 			  status="Discount of 10% in next Purchase";
+		 else if(billAmt>3000)
+			 status="Discount of 5% in next Purchase";
 		 else
 			  status= "Discount of 5% in next Purchase";
 		//Audit The status into file "f:/DiscountCoupons"
